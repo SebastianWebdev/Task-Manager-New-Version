@@ -1,0 +1,89 @@
+.tasks__view {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+}
+
+.tasks__view::-webkit-scrollbar {
+    width: 0;
+}
+
+.task--wrapp {
+    margin: 10px 0;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    min-height: 40px;
+    padding: 0 5%;
+    border: 1px solid rgb(97, 97, 97);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+.task-name {
+    height: 30px;
+    margin-top: 5px;
+}
+
+.task__input--desc,
+.task-name {
+    width: 100%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+.task__body {
+    margin: 0 20px;
+    display: flex;
+}
+
+.task__input--desc {}
+
+.task__head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task__options {
+    display: flex;
+    margin: 0 50px;
+    align-items: center;
+}
+
+.task__option {
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    margin: 0 10px;
+}
+
+.task__option:nth-child(2) {
+    background-color: rgb(0, 204, 255);
+}
+
+.task__option:nth-child(3) {
+    background-color: rgb(187, 110, 250);
+}
+
+.sortable-ghost {
+    opacity: 0.4;
+    background-color: rgb(131, 205, 255);
+    border: none;
+}
+
+.sortable-drag {
+    background-color: rgba(255, 255, 255, 0.445);
+}
+
+.my-handle {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    cursor: pointer
+}

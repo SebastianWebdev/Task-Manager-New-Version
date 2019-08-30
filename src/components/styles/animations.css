@@ -1,0 +1,13 @@
+@keyframes loading-small {
+    0% {
+        height: 0%
+    }
+
+    50% {
+        height: 70%
+    }
+
+    100% {
+        height: 0%
+    }
+}

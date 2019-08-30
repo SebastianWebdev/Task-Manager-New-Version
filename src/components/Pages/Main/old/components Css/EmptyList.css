@@ -1,0 +1,12 @@
+.box-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(26, 25, 25);
+    flex-direction: column;
+}
+
+.empty-list-text {
+    font-size: 4.8rem;
+    font-weight: 100;
+}

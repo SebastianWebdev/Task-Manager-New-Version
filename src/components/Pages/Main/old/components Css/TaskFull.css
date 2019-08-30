@@ -1,0 +1,55 @@
+.taskFull-wrapp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 90%;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-disp {
+    outline: none;
+    border: none;
+}
+
+.task-imput {
+    width: 100%;
+}
+
+.task-close {
+    font-size: 1.3rem;
+    margin: 10px 0;
+}
+
+.task-input-desc {
+    min-height: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+    resize: none;
+}
+
+.task-input-name {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.taskFull-buttons {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly
+}
+
+.taskFull-buttons button {
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(29, 117, 168);
+    color: white;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}

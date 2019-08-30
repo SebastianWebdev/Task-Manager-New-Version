@@ -1,0 +1,73 @@
+.welcome-page section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 90vh;
+    margin-top: 10vh;
+}
+
+.intro {
+
+    background-color: rgb(29, 117, 168);
+
+}
+
+.technology {
+    background-color: rgb(255, 255, 255);
+    color: rgb(29, 27, 27)
+}
+
+.section-tittle {
+    margin: 20px 0;
+    font-size: 2.6rem;
+    font-weight: 300;
+}
+
+.section-describe {
+    font-weight: 100;
+    width: 41vw;
+    font-size: 2.2rem;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.tech-wrap {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.tech-card {
+    border: 1px solid black;
+    width: 30%;
+    height: 60vh;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    font-size: 1.6rem;
+    font-weight: 300;
+
+}
+
+.tech-card .card-desc {
+    text-align: justify;
+    text-align-last: center;
+    height: 50%;
+}
+
+.card-icon-wrap {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.6rem;
+}
+
+.tech-card:nth-child(2) .card-icon-wrap,
+.tech-card:nth-child(3) .card-icon-wrap {
+    font-size: 3.8rem;
+}

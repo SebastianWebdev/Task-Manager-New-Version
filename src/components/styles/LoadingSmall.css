@@ -1,0 +1,72 @@
+.loading_small--bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.63);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading_bars--wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 5vw;
+    height: 3vw;
+}
+
+.loading_bar {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 0%;
+    width: 5px;
+    background-color: #1d75a8;
+    animation-name: loading-small;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+}
+
+.loading_bar--end {
+    background-color: #1d75a8;
+    left: 0;
+    position: absolute;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+
+}
+
+.loading_bar--end:nth-child(1) {
+    top: 0;
+    transform: translateY(-50%)
+}
+
+.loading_bar--end:nth-child(2) {
+    bottom: 0;
+    transform: translateY(50%)
+}
+
+/* loading bar set animaion */
+.loading_bar:nth-child(1) {
+    animation-delay: 0ms
+}
+
+.loading_bar:nth-child(2) {
+    animation-delay: 100ms
+}
+
+.loading_bar:nth-child(3) {
+    animation-delay: 200ms
+}
+
+.loading_bar:nth-child(4) {
+    animation-delay: 300ms
+}
+
+.loading_bar:nth-child(5) {
+    animation-delay: 400ms
+}

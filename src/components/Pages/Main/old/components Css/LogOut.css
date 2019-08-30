@@ -1,0 +1,28 @@
+.logOut-wrap {
+    position: absolute;
+    top: 2%;
+    right: 40px;
+    font-size: 2.6rem;
+    color: rgb(146, 146, 146);
+    cursor: pointer;
+    transition: 150ms;
+    display: flex;
+    align-items: center;
+}
+
+.logOut-wrap:hover,
+.log-out-ico:hover {
+    color: rgb(134, 134, 134);
+}
+
+.log-out-text {
+    font-size: 1.6rem;
+    margin-right: 10px;
+    font-weight: 300;
+}
+
+.log-out-ico {
+    color: rgb(185, 185, 185);
+    transition: 150ms;
+
+}

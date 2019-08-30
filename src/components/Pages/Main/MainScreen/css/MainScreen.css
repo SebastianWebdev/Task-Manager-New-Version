@@ -1,0 +1,56 @@
+.main__window {
+    flex-basis: 80%;
+    height: 100%;
+
+}
+
+.main__content-wrapper {
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+
+.main__init-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__init-wrapper p {
+    font-size: 3rem;
+}
+
+.main__content--list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__active-list--info {
+    width: 100%;
+    flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 0 0;
+    background-color: rgb(255, 194, 64);
+}
+
+.app__select {
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+}
+
+.listView__form--stages select {
+    background-color: rgb(255, 194, 64);
+
+}
+
+.task-stage-wrap {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 2%;
+
+}

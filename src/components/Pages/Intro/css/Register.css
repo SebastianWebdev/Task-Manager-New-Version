@@ -1,0 +1,38 @@
+.reg-log-wrapper {
+    height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(36, 34, 34)
+}
+
+
+.reg-sub {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(219, 219, 219);
+    color: rgb(82, 82, 82);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.reg-sub:hover {
+    background-color: rgb(212, 212, 212);
+}
+
+.reg-sub:active {
+    transform: scale(0.99)
+}
+
+.postreg-link {
+    font-size: 1.5rem;
+    transition: 200ms
+}
+
+.postreg-link:hover {
+    transform: scale(1.01)
+}

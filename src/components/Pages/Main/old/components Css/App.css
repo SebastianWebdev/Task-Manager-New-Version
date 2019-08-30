@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin-ext');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+:root {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+  line-height: 1.7;
+  color: whitesmoke;
+  scroll-behavior: smooth;
+
+}
+
+.app-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+/* pading for every main element*/
+.nav,
+.welcome-page section {
+  padding: 0 40px;
+}
+
+.save-btn {
+  border: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 8px;
+  background-color: rgb(29, 117, 168);
+  border-radius: 4px;
+  color: white;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  box-shadow: 0px 10px 20px 0px rgb(235, 235, 235);
+  transform: scale(1.01)
+}

@@ -1,0 +1,75 @@
+.uploud-avatar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 200px;
+    width: 60%;
+    color: black
+}
+
+
+
+
+#avatar-input {
+    display: none
+}
+
+.avatar-input-label.btn-rec {
+    padding: 5px;
+    font-size: 2rem;
+    border: none;
+    background-color: rgb(103, 167, 252);
+    color: white;
+    transition: 100ms;
+}
+
+.avatar-input-label.btn-rec:hover {
+    background-color: #fff;
+    color: black;
+    border: 1px solid rgb(175, 175, 175);
+}
+
+.dragg-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    border: 1px dashed rgb(194, 194, 194);
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.dragg-area.highlight {
+    border-color: rgb(63, 63, 63)
+}
+
+.drop-desc {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.dragg-area .fa-arrow-down {
+    color: rgb(131, 131, 131);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.previev-galery {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.prev-img-container {
+    height: 80px;
+    width: 80px;
+}
+
+.prev-img {
+    width: 100%;
+}
