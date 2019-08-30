@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { updateTask } from '../../../../../redux/actions'
 import updateTaskToDatabase from '../../../../../utils/updateTaskToDatabase'
 const Task = props => {
-
-    const { task, updateTask, tasks, index } = props
+    const { task, updateTask, index } = props
     const date = new Date(task.createdAt)
 
     const [isOpen, setIsOpen] = useState(false)
@@ -43,12 +42,16 @@ const Task = props => {
             description: taskDescription
         }
         updateTaskToDatabase({ body, id: task._id })
-
     }
-
+    const handleTaskStage = e => {
+        const newStage = e.target.value * 1
+        props.handleStage(newStage, index)
+    }
     return (
         <li ref={ref} className="task--wrapp" onClick={handleTask}>
-            <div className="my-handle"></div>
+            <div className="my-handle">
+                <i class="fas fa-grip-vertical"></i>
+            </div>
             <div className="task__head">
                 <input onChange={handleTaskName} value={taskName} type="text" className="task-name" />
             </div>
@@ -64,7 +67,7 @@ const Task = props => {
                     <div className="task__option"></div>
                 </div>
                 <form action="">
-                    <select className="app__select" name="task__moveTo" id="">
+                    <select onChange={handleTaskStage} className="app__select" name="task__moveTo" id="">
                         <option value="">Przenieś do:</option>
                         <option value="1">Do zrobienia</option>
                         <option value="2">W trakcie </option>
@@ -72,13 +75,17 @@ const Task = props => {
                     </select>
                 </form>
             </div>
+            <div className="task__icons">
+                <i className="fas fa-trash-alt"></i>
+                <i className="fas fa-sort-down"></i>
+            </div>
 
             {isTaskChange ? <button onClick={handleTaskBtnSave} className="task__btn--save" >Zapisz</button> : null}
         </li>
     );
 }
 const mapStateToProps = state => {
-    return { tasks: state.loginData.tasks }
+    return {}
 
 }
 export default connect(mapStateToProps, { updateTask })(Task)

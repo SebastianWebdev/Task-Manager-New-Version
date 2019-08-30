@@ -10,7 +10,6 @@ const getDataFromApi = async (token, loginData = null) => {
         const user = await taskAppApi.get('users/me', { headers: { Authorization: `Bearer ${token}` } })
         const tasks = await taskAppApi.get('/tasks', { headers: { Authorization: `Bearer ${token}` } })
         const tasksLists = await taskAppApi.get('/lists', { headers: { Authorization: `Bearer ${token}` } })
-        console.log(tasksLists);
         return { user: user.data, tasks: tasks.data, tasksLists: tasksLists.data, status: user.status }
     } else { throw new Error("You must past a token to this function getDataFromApi or past loginData to get Token from API") }
 }

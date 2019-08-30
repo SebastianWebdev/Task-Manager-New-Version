@@ -32,4 +32,7 @@ const setActiveList = data => {
 const updateTask = data => {
     return { type: 'UPDATE_TASK', payload: { name: data.taskName, description: data.description, index: data.index } }
 }
-export { login, register, setDataOnInit, setActiveList, updateTask }
+const updateTaskStage = data => {
+    return { type: 'UPDATE_TASK_STAGE', payload: { i: data.index, stage: data.stage } }
+}
+export { login, register, setDataOnInit, setActiveList, updateTask, updateTaskStage }

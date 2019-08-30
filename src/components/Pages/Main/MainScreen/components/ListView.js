@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux'
 
 import Tasks from './TasksStage'
-import Task from './Task'
+
 import findList from '../../../../../utils/findActiveList'
 
 
@@ -12,14 +12,9 @@ const ListView = props => {
     const { tasksLists, activListId, listTempId, tasks } = props
     const list = findList(activListId, tasksLists, listTempId)
 
-    const TasksReact = tasks.map((T, i) => <Task key={T.temp_Id} task={T} index={i} />)
-    const tasksForList = TasksReact.filter(t => activListId === t.props.task.list || listTempId === t.props.task.list)
-
     const handleSelect = e => {
         setActiveStage(e.target.value)
     }
-
-
     return (
         <div className="main__content-wrapper main__content--list ">
             <nav className="main__active-list--info">
@@ -33,13 +28,11 @@ const ListView = props => {
                     </select>
                 </form>
             </nav>
-            {list ? <Tasks activeList={list} activeStage={activeStage} tasks={tasksForList} /> : <p>Wybierz jakąś listę zadań</p>}
+            {list ? <Tasks activeList={list} activeStage={activeStage} /> : <p>Wybierz jakąś listę zadań</p>}
         </div>
     );
 }
 const mapStateToProps = state => {
-    console.log(state, "state z listView");
-
-    return { activListId: state.activeList._id, tasksLists: state.loginData.lists, listTempId: state.activeList.temp_id, tasks: state.loginData.tasks }
+    return { activListId: state.activeList._id, tasksLists: state.loginData.lists, listTempId: state.activeList.temp_id }
 }
 export default connect(mapStateToProps)(ListView);
