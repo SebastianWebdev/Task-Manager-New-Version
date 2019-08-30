@@ -7,6 +7,8 @@ import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 const NavigationScreen = props => {
     const { avatar, userName } = props
+    console.log(props, "props z navigaction screen");
+
     const lists = props.lists.map(list => <NavigationListItem key={list._id} listId={list._id} tittle={list.tittle} temp_id={list.temp_id} />)
     return (
         <div className="main__navigaction">
@@ -23,6 +25,6 @@ const NavigationScreen = props => {
     );
 }
 const mapStateToProps = state => {
-    return { lists: state.loginData.tasksLists, avatar: state.loginData.user.avatar, userName: state.loginData.user.name }
+    return { lists: state.loginData.lists, avatar: state.loginData.user.avatar, userName: state.loginData.user.name }
 }
 export default connect(mapStateToProps)(NavigationScreen);

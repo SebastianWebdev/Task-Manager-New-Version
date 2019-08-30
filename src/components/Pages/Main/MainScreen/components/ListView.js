@@ -38,6 +38,8 @@ const ListView = props => {
     );
 }
 const mapStateToProps = state => {
-    return { activListId: state.activeList._id, tasksLists: state.loginData.tasksLists, listTempId: state.activeList.temp_id, tasks: state.loginData.tasks }
+    console.log(state, "state z listView");
+
+    return { activListId: state.activeList._id, tasksLists: state.loginData.lists, listTempId: state.activeList.temp_id, tasks: state.loginData.tasks }
 }
 export default connect(mapStateToProps)(ListView);

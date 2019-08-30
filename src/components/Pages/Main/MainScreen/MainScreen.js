@@ -5,7 +5,6 @@ import InitMainView from './components/InitMainView'
 import ListView from './components/ListView'
 import UserView from './components/UserView'
 const MainScreen = props => {
-
     return (
         <section className="main__window">
             <Switch>

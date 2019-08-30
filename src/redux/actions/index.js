@@ -16,7 +16,7 @@ const login = data => async dispatch => {
 };
 const setDataOnInit = data => {
     const { user, tasks, tasksLists, status } = data
-    return { type: "USER_REMEMBERED", payload: { user, tasks, tasksLists, status, isLogged: true } }
+    return { type: "USER_REMEMBERED", payload: { user, tasks, lists: tasksLists, status, isLogged: true } }
 }
 const register = data => async dispatch => {
     try {
