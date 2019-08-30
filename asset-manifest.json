@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Task-Manager-New-Version/static/css/main.f7cfba0b.chunk.css",
-    "main.js": "/Task-Manager-New-Version/static/js/main.4288ac71.chunk.js",
-    "main.js.map": "/Task-Manager-New-Version/static/js/main.4288ac71.chunk.js.map",
+    "main.css": "/Task-Manager-New-Version/static/css/main.ad0e512b.chunk.css",
+    "main.js": "/Task-Manager-New-Version/static/js/main.9ea3de9c.chunk.js",
+    "main.js.map": "/Task-Manager-New-Version/static/js/main.9ea3de9c.chunk.js.map",
     "runtime~main.js": "/Task-Manager-New-Version/static/js/runtime~main.6985776f.js",
     "runtime~main.js.map": "/Task-Manager-New-Version/static/js/runtime~main.6985776f.js.map",
-    "static/js/2.6952db53.chunk.js": "/Task-Manager-New-Version/static/js/2.6952db53.chunk.js",
-    "static/js/2.6952db53.chunk.js.map": "/Task-Manager-New-Version/static/js/2.6952db53.chunk.js.map",
+    "static/js/2.4c997982.chunk.js": "/Task-Manager-New-Version/static/js/2.4c997982.chunk.js",
+    "static/js/2.4c997982.chunk.js.map": "/Task-Manager-New-Version/static/js/2.4c997982.chunk.js.map",
     "index.html": "/Task-Manager-New-Version/index.html",
-    "precache-manifest.fd766da38b5bd3a99a598526a65c0bc3.js": "/Task-Manager-New-Version/precache-manifest.fd766da38b5bd3a99a598526a65c0bc3.js",
+    "precache-manifest.99ddf855780a0a679e5d3dddd6e58545.js": "/Task-Manager-New-Version/precache-manifest.99ddf855780a0a679e5d3dddd6e58545.js",
     "service-worker.js": "/Task-Manager-New-Version/service-worker.js",
-    "static/css/main.f7cfba0b.chunk.css.map": "/Task-Manager-New-Version/static/css/main.f7cfba0b.chunk.css.map"
+    "static/css/main.ad0e512b.chunk.css.map": "/Task-Manager-New-Version/static/css/main.ad0e512b.chunk.css.map"
   }
 }
