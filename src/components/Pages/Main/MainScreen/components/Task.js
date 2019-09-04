@@ -3,10 +3,8 @@ import { connect } from 'react-redux'
 import { updateTask } from '../../../../../redux/actions'
 import updateTaskToDatabase from '../../../../../utils/updateTaskToDatabase'
 const Task = props => {
-    const { task, updateTask, index } = props
+    const { task, updateTask, index, handleDelete } = props
     const date = new Date(task.createdAt)
-
-    const [isOpen, setIsOpen] = useState(false)
     const [taskName, setTaskName] = useState(task.name)
     const [taskDescription, setTaskDescription] = useState(task.description)
     const [isTaskChange, setIsTaskChange] = useState(false)
@@ -14,11 +12,6 @@ const Task = props => {
     const dateValues = { year: date.getFullYear(), month: date.getMonth(), day: date.getDate(), houer: date.getHours(), minuts: date.getMinutes() }
 
     const ref = React.createRef()
-    // handle opening task
-    const handleTask = e => {
-        setIsOpen(true)
-        e.currentTarget.classList.add("active")
-    }
 
     const handleTaskName = e => {
         setTaskName(e.target.value)
@@ -29,11 +22,6 @@ const Task = props => {
         setTaskDescription(e.target.value)
         setIsTaskChange(true)
     }
-    const handleTaskClose = e => {
-        e.stopPropagation()
-        setIsOpen(false)
-        ref.current.classList.remove("active")
-    }
     const handleTaskBtnSave = e => {
         setIsTaskChange(false)
         updateTask({ taskName, description: taskDescription, index })
@@ -41,14 +29,19 @@ const Task = props => {
             name: taskName,
             description: taskDescription
         }
-        updateTaskToDatabase({ body, id: task._id })
+        updateTaskToDatabase({ body, id: task._id, type: "patch" })
     }
     const handleTaskStage = e => {
         const newStage = e.target.value * 1
         props.handleStage(newStage, index)
     }
+    const handleDeleteBtn = e => {
+        handleDelete(index, task._id)
+        updateTaskToDatabase({ id: task._id, type: "delete" })
+    }
+
     return (
-        <li ref={ref} className="task--wrapp" onClick={handleTask}>
+        <li ref={ref} className="task--wrapp" >
             <div className="my-handle">
                 <i class="fas fa-grip-vertical"></i>
             </div>
@@ -61,11 +54,7 @@ const Task = props => {
                 <br />
                     {dateValues.year} {dateValues.month < 10 ? `-0${dateValues.month}` : dateValues.month} {dateValues.day < 10 ? `-0${dateValues.day}` : dateValues.day}
                 </p>
-                <div className="task__options">
-                    <div className="task__option"></div>
-                    <div className="task__option"></div>
-                    <div className="task__option"></div>
-                </div>
+
                 <form action="">
                     <select onChange={handleTaskStage} className="app__select" name="task__moveTo" id="">
                         <option value="">Przenieś do:</option>
@@ -76,7 +65,7 @@ const Task = props => {
                 </form>
             </div>
             <div className="task__icons">
-                <i className="fas fa-trash-alt"></i>
+                <i onClick={handleDeleteBtn} className="fas fa-trash-alt"></i>
                 <i className="fas fa-sort-down"></i>
             </div>
 

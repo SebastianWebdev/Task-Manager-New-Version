@@ -6,23 +6,23 @@ import Task from './Task'
 
 import Sortable from 'sortablejs';
 import { connect } from 'react-redux'
-import { updateTaskStage } from '../../../../../redux/actions'
+import { updateTaskStage, deleteTask } from '../../../../../redux/actions'
 
 const Tasks = props => {
     const draggableContainer = React.createRef()
-    const { tasks, activeStage, activeList, updateTaskStage } = props
-    const [isChanged, setIsChenged] = useState(false)
+    const { loginData, activeStage, activeList, updateTaskStage, deleteTask } = props
+
+    const tasks = loginData.tasks
     const handleStage = (newStage, index) => {
         updateTaskStage({ index, stage: newStage })
-        if (isChanged) {
-            setIsChenged(false)
-        } else (
-            setIsChenged(true)
-        )
     }
-    const TasksReact = tasks.map((T, i) => <Task handleStage={handleStage} key={T.temp_Id} task={T} index={i} />)
-    const tasksForList = TasksReact.filter(t => activeList._id === t.props.task.list || activeList.temp_Id === t.props.task.list)
+    const handleDeleteTask = (index, id) => {
+        deleteTask({ index, id })
+    }
 
+    const TasksReact = tasks.map((T, i) => <Task handleDelete={handleDeleteTask} handleStage={handleStage} key={T.temp_Id} task={T} index={i} />)
+
+    const tasksForList = TasksReact.filter(t => activeList._id === t.props.task.list || activeList.temp_Id === t.props.task.list)
 
     useEffect(() => {
         Sortable.create(draggableContainer.current,
@@ -45,6 +45,6 @@ const Tasks = props => {
     );
 }
 const mapStateToProps = (state) => {
-    return { tasks: state.loginData.tasks }
+    return { loginData: state.loginData }
 }
-export default connect(mapStateToProps, { updateTaskStage })(Tasks) 
+export default connect(mapStateToProps, { updateTaskStage, deleteTask })(Tasks) 

@@ -3,17 +3,21 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux'
 
 import Tasks from './TasksStage'
-
+import CreateTask from './CreateTask'
 import findList from '../../../../../utils/findActiveList'
-
+import CreateTaskPortal from '../../../../portals/createTaskPortal'
 
 const ListView = props => {
     const [activeStage, setActiveStage] = useState(1)
-    const { tasksLists, activListId, listTempId, tasks } = props
+    const [isNewTaskCreating, setIsNewTaskCreating] = useState(false)
+    const { tasksLists, activListId, listTempId } = props
     const list = findList(activListId, tasksLists, listTempId)
 
     const handleSelect = e => {
         setActiveStage(e.target.value)
+    }
+    const handleAddTaskBtn = e => {
+        setIsNewTaskCreating(true)
     }
     return (
         <div className="main__content-wrapper main__content--list ">
@@ -27,8 +31,14 @@ const ListView = props => {
                         <option value="3">Zrobione</option>
                     </select>
                 </form>
+                <button onClick={handleAddTaskBtn} className="add_btn add_btn--task">Add Task</button>
             </nav>
             {list ? <Tasks activeList={list} activeStage={activeStage} /> : <p>Wybierz jakąś listę zadań</p>}
+            {isNewTaskCreating ?
+                <CreateTaskPortal>
+                    <CreateTask close={setIsNewTaskCreating} activeList={activListId} />
+                </CreateTaskPortal>
+                : null}
         </div>
     );
 }
