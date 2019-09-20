@@ -41,4 +41,11 @@ const deleteTask = data => {
 const addTask = data => {
     return ({ type: "ADD_TASK", payload: { task: data.task } })
 }
-export { login, register, setDataOnInit, setActiveList, updateTask, updateTaskStage, deleteTask, addTask }
+const addList = data => {
+
+    return { type: "ADD_LIST", payload: { list: data } }
+}
+const deleteList = data => {
+    return { type: "DELETE_LIST", payload: { tasksLists: data } }
+}
+export { login, register, setDataOnInit, setActiveList, updateTask, updateTaskStage, deleteTask, addTask, addList, deleteList }

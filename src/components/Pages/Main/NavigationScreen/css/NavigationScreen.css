@@ -53,3 +53,16 @@
     display: flex;
     justify-content: center;
 }
+
+.nav-btn--add {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.nav-btn--add:hover {
+    transform: scale(1.01)
+}
+
+.listItem-wrap {
+    display: flex
+}

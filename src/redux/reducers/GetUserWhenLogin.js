@@ -31,6 +31,18 @@ const loginReducer = (data = {}, action) => {
             const { task } = action.payload
             newData.tasks.push(task)
             return newData
+        case 'ADD_LIST':
+
+
+            const { list } = action.payload
+            newData.lists.push(list)
+            return newData
+        case "DELETE_LIST":
+            console.log('Działa deleteList REducer');
+            const { tasksLists } = action.payload
+
+            newData.lists = tasksLists
+            return newData
         default:
             return data
 
